@@ -279,7 +279,7 @@ function needsAsyncStartup() {
   }
 }
 
-// --- 核心 HTTP 服务器（端口 9321）逻辑 ---
+// --- 核心 HTTP 服务器（端口 8080）逻辑 ---
 // 创建主业务服务器实例（将 Node.js 请求转换为 Web API Request，并调用 worker.js 处理）
 function createServer() {
   // 导入所需的 fetch 兼容对象
@@ -494,10 +494,10 @@ function startServerSync() {
   // 设置 .env 文件监听
   setupEnvWatcher();
 
-  // 启动主业务服务器 (9321)
+  // 启动主业务服务器 (8080)
   mainServer = createServer();
-  mainServer.listen(9321, '0.0.0.0', () => {
-    console.log('Server running on http://0.0.0.0:9321');
+  mainServer.listen(8080, '0.0.0.0', () => {
+    console.log('Server running on http://0.0.0.0:8080');
   });
 
   // 启动5321端口的代理服务
@@ -522,10 +522,10 @@ async function startServerAsync() {
       console.log('[server] node-fetch v3 loaded successfully');
     }
 
-    // 启动主业务服务器 (9321)
+    // 启动主业务服务器 (8080)
     mainServer = createServer();
-    mainServer.listen(9321, '0.0.0.0', () => {
-      console.log('Server running on http://0.0.0.0:9321 (compatibility mode)');
+    mainServer.listen(8080, '0.0.0.0', () => {
+      console.log('Server running on http://0.0.0.0:8080 (compatibility mode)');
     });
 
     // 启动5321端口的代理服务
