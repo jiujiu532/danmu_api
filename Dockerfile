@@ -17,7 +17,7 @@ COPY danmu_api/ ./danmu_api/
 ENV TOKEN=87654321
 
 # 暴露端口
-EXPOSE 9321
+EXPOSE 8080
 
 # 启动命令
 CMD ["node", "danmu_api/server.js"]
